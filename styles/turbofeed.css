@@ -1,0 +1,420 @@
+
+/* Turbo Feed page */
+
+.turbofeed-bg {
+	background-color: black;
+}
+
+/* For mobile phones */
+.questions-answers {
+	/* Rounded box */
+	border-radius: 25px;
+    border: 2px solid #CC6600;
+    padding: 10px; 
+	margin-top: 20px;
+}
+
+.turbofeed {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.turbofeed p{
+	/* Turbo Feed paragraph */
+	color: #CC6600;
+	font-size: 14px;
+	font-family: Helvetica;
+	padding: 0%;
+}
+
+.turbofeed h2{
+	/* Turbo Feed header */
+	
+	color: #ff9a33;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: 3px 3px #994d00;
+	font-family: Helvetica;
+}
+
+.turbofeed h3{
+	/* Turbo Feed header */
+	
+	color: #ff9a33;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: left;
+	text-shadow: 2px 2px #994d00;
+	font-family: Helvetica;
+}
+
+.turbofeed h4{
+		/* Turbo Feed div */
+		
+		color: #ff9a33;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: left;
+		text-shadow: 1px 1px #994d00;
+		font-family: Helvetica;
+	}
+
+table.turbofeed-table tbody td {
+	font-size: 10px;
+	color: #000000;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+	background: linear-gradient(to right, #db5a00, black);
+	font-family: Helvetica;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 10px;
+	color: #000000;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	display: inline-block;
+}
+
+.tab-button {
+	width: 100%;
+	outline: none;
+	padding: 10px;
+	color: #ff9a33;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	font-family: Helvetica;
+	border: 1px solid #CC6600;
+	border-bottom: 4px solid #CC6600;
+	border-radius: 0px 25px 0px 0px;
+	background-color: black;
+}
+	
+.tab-content {
+	padding: 10px;
+	border: 2px solid #CC6600;
+	box-shadow: 0 0 25px 25px #141414;
+	border-bottom-left-radius: 38px;
+	border-bottom-right-radius: 38px;
+}
+
+.document {
+	width: 100%;
+	height: 60%;
+}
+
+.turbofeed h5{
+		/* Turbo Feed Header */
+		color: #CC6600;
+		font-size: 22px;
+		font-family: Helvetica;
+		padding-top: 30px;
+		font-weight: none;
+	}
+
+@media all and (min-width: 600px) {
+    /* For tablets */
+
+	.turbofeed {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+	
+	.questions-answers {
+		/* Rounded box */
+		border-radius: 25px;
+		border: 2px solid #CC6600;
+		padding: 18px; 
+		margin-top: 50px;
+	}
+	
+	.turbofeed p{
+		/* Turbo Feed paragraph */
+		color: #CC6600;
+		font-size: 20px;
+		font-family: Helvetica;
+		padding: 0%;
+	}
+	
+	.turbofeed h2{
+		/* Turbo Feed header */
+		
+		color: #ff9a33;
+		font-size: 60px;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 4px 3px #994d00;
+		font-family: Helvetica;
+	}
+	
+	.turbofeed h3{
+		/* Turbo Feed header */
+		
+		color: #ff9a33;
+		font-size: 40px;
+		font-weight: bold;
+		text-align: left;
+		text-shadow: 3px 3px #994d00;
+		font-family: Helvetica;
+	}
+	
+	.turbofeed h4{
+		/* Turbo Feed div */
+		
+		color: #ff9a33;
+		font-size: 25px;
+		font-weight: bold;
+		text-align: left;
+		text-shadow: 2px 2px #994d00;
+		font-family: Helvetica;
+	}
+
+	table.turbofeed-table tbody td {
+		font-size: 14px;
+		color: #000000;
+	}
+	
+	/* Style the button that is used to open and close the collapsible content */
+	.collapsible {
+		background: linear-gradient(to right, #db5a00, black);
+		font-family: Helvetica;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 16px;
+		color: #000000;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+	}
+	
+	.tab-button {
+		width: 100%;
+		outline: none;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		color: #ff9a33;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		text-decoration: none;
+		font-family: Helvetica;
+		border: 1px solid #CC6600;
+		border-bottom: 4px solid #CC6600;
+		border-radius: 0px 25px 0px 0px;
+		background-color: black;
+	}
+	
+	.tab-content {
+		padding: 18px;
+		border: 2px solid #CC6600;
+		box-shadow: 0 0 25px 25px #141414;
+		border-bottom-left-radius: 42px;
+		border-bottom-right-radius: 42px;
+	}
+	
+	.document {
+		width: 100%;
+		height: 70%;
+	}
+}
+
+@media all and (min-width: 768px) {
+	/* For desktop */
+
+	.turbofeed {
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+	
+	.questions-answers {
+		/* Rounded box */
+		border-radius: 30px;
+		border: 2px solid #CC6600;
+		padding: 18px; 
+		margin-top: 50px;
+	}
+	
+	.turbofeed p{
+		/* Turbo Feed paragraph */
+		color: #CC6600;
+		font-size: 20px;
+		font-family: Helvetica;
+		padding: 0%;
+	}
+	
+	.turbofeed h2{
+		/* Turbo Feed header */
+		
+		color: #ff9a33;
+		font-size: 70px;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 5px 5px #994d00;
+		font-family: Helvetica;
+	}
+	
+	.turbofeed h3{
+		/* Turbo Feed header */
+		
+		color: #ff9a33;
+		font-size: 50px;
+		font-weight: bold;
+		text-align: left;
+		text-shadow: 3px 3px #994d00;
+		font-family: Helvetica;
+	}
+	
+	.turbofeed h4{
+		/* Turbo Feed div */
+		
+		color: #ff9a33;
+		font-size: 30px;
+		font-weight: bold;
+		text-align: left;
+		text-shadow: 2px 2px #994d00;
+		font-family: Helvetica;
+	}
+	
+	table.turbofeed-table tbody td {
+		font-size: 18px;
+		color: #000000;
+	}
+	
+	/* Style the button that is used to open and close the collapsible content */
+	.collapsible {
+		background: linear-gradient(to right, #db5a00, Transparent);
+		font-family: Helvetica;
+		text-decoration: none;
+		font-weight: bold;
+		font-size: 20px;
+		color: #000000;
+		cursor: pointer;
+		padding: 18px;
+		width: 100%;
+		border: none;
+		text-align: left;
+		outline: none;
+	}
+
+	.tab-button {
+		width: 100%;
+		outline: none;
+		padding-top: 16px;
+		padding-bottom: 16px;
+		color: #ff9a33;
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+		text-decoration: none;
+		font-family: Helvetica;
+		border: 1px solid #CC6600;
+		border-bottom: 4px solid #CC6600;
+		border-radius: 0px 25px 0px 0px;
+		background-color: black;
+	}
+	
+	.tab-content {
+		padding: 18px;
+		border: 2px solid #CC6600;
+		box-shadow: 0 0 25px 25px #141414;
+		border-bottom-left-radius: 42px;
+		border-bottom-right-radius: 42px;;
+	}
+	
+	.document {
+		width: 100%;
+		height: 80%;
+	}
+}
+
+table.turbofeed-table {
+	font-family: Helvetica;
+	background-color: #CC6600;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+table.turbofeed-table td, table.turbofeed-table th {
+	border: 1px solid #000000;
+	padding: 3px 2px;
+}
+
+table.turbofeed-table tr:nth-child(even) {
+	background: #FF9A33;
+}
+
+table.turbofeed-table thead {
+	background: #292929;
+	background: -moz-linear-gradient(top, #5e5e5e 0%, #3e3e3e 66%, #292929 100%);
+	background: -webkit-linear-gradient(top, #5e5e5e 0%, #3e3e3e 66%, #292929 100%);
+	background: linear-gradient(to bottom, #5e5e5e 0%, #3e3e3e 66%, #292929 100%);
+	border-bottom: 2px solid #444444;
+}
+
+table.turbofeed-table thead th {
+	font-size: 18px;
+	color: #FFFFFF;
+	border-left: 2px solid #D0E4F5;
+}
+
+table.turbofeed-table thead th:first-child {
+	border-left: none;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+	padding-top: 25px;
+	padding: 18px;
+	display: none;
+	border: 1px solid #CC6600;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+}
+
+/*.turbofeed .tab-button:hover,*/
+.tab-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .tab-button:hover {
+	background-color: #CC6600;
+	border-color: #CC6600;
+	color: #000000;
+}
+
+.turbofeed-button {
+	background-color: transparent;
+	display: inline-block;
+	width: 250px;
+	margin: 10px;
+	padding: 15px;
+	color: #CC6600;
+	border: 2px solid #CC6600;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	transition: background-color 0.2s ease-out,
+			  color 0.2s ease-out;
+}
+
+.turbofeed-button:hover,
+.turbofeed-button:active {
+  background-color: #CC6600;
+  color: #000;
+  transition: background-color 0.3s ease-in,
+  
