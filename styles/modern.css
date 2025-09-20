@@ -455,6 +455,14 @@ p {
     display: none;
   }
   
+  .nav-logo {
+    font-size: 1.3rem;
+  }
+  
+  .nav-logo-img {
+    height: 28px;
+  }
+  
   .hero {
     min-height: 80vh;
     padding: var(--space-lg) 0;
@@ -670,6 +678,14 @@ p {
   .container,
   .content-container {
     padding: 0 var(--space-sm);
+  }
+  
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  
+  .nav-logo-img {
+    height: 24px;
   }
   
   .card {
