@@ -301,6 +301,20 @@ p {
   font-weight: 700;
   color: var(--text-primary);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav-logo-img {
+  height: 32px;
+  width: auto;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.nav-logo:hover .nav-logo-img {
+  opacity: 1;
 }
 
 .nav-links {
