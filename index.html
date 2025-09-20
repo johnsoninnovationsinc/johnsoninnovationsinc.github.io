@@ -40,8 +40,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">TurboFeed Series 5000</h1>
-            <p class="hero-subtitle">Intelligent bulk vending solutions that maximize your profits with advanced automation and superior performance.</p>
+            <h1 class="hero-title">TurboFeed Bulk Vending</h1>
+            <p class="hero-subtitle">Intelligent vending machine solutions that maximize your profits with advanced automation and superior performance.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
                 <a href="#overview" class="btn btn-primary">Explore Product</a>
                 <a href="#features" class="btn btn-secondary">View Features</a>
@@ -54,7 +54,7 @@
         <div class="content-container">
             <div class="text-center mb-xl">
                 <h2 style="background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-orange) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Built for Performance</h2>
-                <p>Proudly designed and manufactured in Georgia, USA, the TurboFeed Series 5000 represents the pinnacle of intelligent grain vending technology. Our machines are designed for maximum profitability, reliability, and ease of operation.</p>
+                <p>Proudly designed and manufactured in Georgia, USA, the TurboFeed Bulk Vending Machines represent the pinnacle of vending technology. Our machines are designed for maximum profitability, reliability, and ease of operation.</p>
             </div>
             
             <div class="text-center mb-xl">
@@ -279,8 +279,8 @@
                     <div>
                         <h4>Water-Resistant</h4>
                         <p><strong>Humidity and heat</strong> are the greatest enemies of outdoor electronics. Our company is based in South Georgia and we are no strangers to the demands that are placed on electronics in these conditions. That is why all of the wiring harness of our machine is automotive-grade and water protected with rubber-sealed locking connectors. The main enclosure for the machine computer and payment acceptance has a rubber gasket to help prevent any water from intruding. Even our first prototype machine <strong>continued to sell bulk feed through Hurricane Irma.</strong></p>
-                    </div>
-                    
+</div>
+
                     <div>
                         <h4>Built to Last</h4>
                         <p>We wanted to make sure your machine stands the test of time, thats why all of the sheet-metal exterior is industrial-grade powder coated or stainless steel. The touchscreen monitor is shock and water resistant and is similar to what you would find on an ATM machine. We even custom designed a solid-state motor controller that offers a long service life and <strong>allows the machine to reverse its auger.</strong></p>
@@ -337,7 +337,7 @@
             <div class="text-center">
                 <p style="color: var(--text-muted); margin-bottom: var(--space-md);">Proudly designed and manufactured in Georgia, USA</p>
                 <p style="color: var(--text-muted); font-size: 0.875rem;">© 2024 Johnson Innovations Inc. All rights reserved.</p>
-            </div>
+</div>
 </div>
     </footer>
 
@@ -357,25 +357,6 @@
             });
         });
 
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and sections
-        document.querySelectorAll('.card, .section').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
-        });
 
         // Active navigation link highlighting
         const sections = document.querySelectorAll('section[id]');
