@@ -1,82 +1,380 @@
-* {box-sizing:border-box}
+/* Modern Slideshow Styles */
 
+/* CSS Variables for consistent theming */
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #1a1a1a;
+    --accent-bg: #2a2a2a;
+    --primary-orange: #ff6b35;
+    --secondary-orange: #ff8c42;
+    --accent-orange: #ffa726;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --border-color: #333333;
+    --shadow-light: rgba(255, 107, 53, 0.1);
+    --shadow-medium: rgba(255, 107, 53, 0.2);
+    --shadow-heavy: rgba(255, 107, 53, 0.3);
+    --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Modern slideshow container */
 .slideshow-image-container {
-	max-width: 1024px;
-	position: relative;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
 }
 
-/* Slideshow container */
 .slideshow-container {
-	max-width: 1024px;
-	position: relative;
-	margin: auto;
-	padding: 18px;
-	border-radius: 18px;
-	border: 1px solid #CC6600;
+    max-width: 1200px;
+    position: relative;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
 }
 
-/* Hide the images by default */
+.slideshow-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+}
+
+/* Hide images by default */
 .mySlides {
     display: none;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Next & previous buttons */
+.mySlides img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.mySlides:hover img {
+    transform: scale(1.02);
+}
+
+/* Modern navigation buttons */
 .prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    color: var(--text-primary);
+    font-weight: bold;
+    font-size: 24px;
+    transition: all var(--transition-medium);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--primary-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
 
-/* Position the "next button" to the right */
+.prev {
+    left: 20px;
+}
+
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 20px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+    background: var(--gradient-primary);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 25px var(--shadow-medium);
 }
 
-/* The dots/bullets/indicators */
+.prev:active, .next:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Modern dot indicators */
+.dot-container {
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+}
+
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: Transparency;
-  border: 1px solid #CC6600;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+    margin: 0 8px;
+    background: transparent;
+    border: 2px solid var(--primary-orange);
+    border-radius: 50%;
+    display: inline-block;
+    transition: all var(--transition-medium);
+    position: relative;
+}
+
+.dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    transition: all var(--transition-medium);
 }
 
 .dot:hover {
-  background-color: #ff9a33;
+    transform: scale(1.2);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
-/* Fading animation */
+.dot:hover::before {
+    width: 8px;
+    height: 8px;
+}
+
+.dot.active {
+    background: var(--gradient-primary);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.dot.active::before {
+    width: 6px;
+    height: 6px;
+    background: var(--text-primary);
+}
+
+/* Modern fade animation */
 .fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation-name: modernFade;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
 }
 
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+@keyframes modernFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+/* Responsive design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        margin: 1rem auto;
+        padding: 1rem;
+    }
+    
+    .prev, .next {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
+    
+    .dot {
+        height: 14px;
+        width: 14px;
+        margin: 0 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container {
+        padding: 0.5rem;
+        margin: 0.5rem auto;
+    }
+    
+    .prev, .next {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .prev {
+        left: 5px;
+    }
+    
+    .next {
+        right: 5px;
+    }
+    
+    .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 4px;
+    }
+}
+
+/* Loading animation */
+.slideshow-container.loading {
+    position: relative;
+}
+
+.slideshow-container.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--primary-orange);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 100;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.prev:focus,
+.next:focus,
+.dot:focus {
+    outline: 2px solid var(--primary-orange);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .slideshow-container {
+        border: 2px solid var(--text-primary);
+    }
+    
+    .prev, .next {
+        background: var(--text-primary);
+        color: var(--primary-bg);
+    }
+    
+    .dot {
+        border-color: var(--text-primary);
+    }
+}
+
+/* Horizontal auto-scrolling slideshow */
+.horizontal-slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: 400px;
+    background: var(--tertiary-bg);
+}
+
+.horizontal-slideshow {
+    display: flex;
+    width: 1000%; /* 10 images × 100% width each */
+    height: 100%;
+    animation: horizontalScroll 30s infinite linear;
+    position: relative;
+}
+
+.horizontal-slide {
+    flex: 0 0 10%; /* Each slide takes 10% of the total width (1000% / 10 = 10%) */
+    position: relative;
+    height: 100%;
+    min-width: 0; /* Prevent flex items from growing */
+}
+
+.horizontal-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border: none;
+}
+
+/* Horizontal scroll animation with pauses */
+@keyframes horizontalScroll {
+    0% { transform: translateX(0%); }
+    8% { transform: translateX(0%); } /* Pause at image 1 */
+    10% { transform: translateX(-10%); }
+    18% { transform: translateX(-10%); } /* Pause at image 2 */
+    20% { transform: translateX(-20%); }
+    28% { transform: translateX(-20%); } /* Pause at image 3 */
+    30% { transform: translateX(-30%); }
+    38% { transform: translateX(-30%); } /* Pause at image 4 */
+    40% { transform: translateX(-40%); }
+    48% { transform: translateX(-40%); } /* Pause at image 5 */
+    50% { transform: translateX(-50%); }
+    58% { transform: translateX(-50%); } /* Pause at image 6 */
+    60% { transform: translateX(-60%); }
+    68% { transform: translateX(-60%); } /* Pause at image 7 */
+    70% { transform: translateX(-70%); }
+    78% { transform: translateX(-70%); } /* Pause at image 8 */
+    80% { transform: translateX(-80%); }
+    88% { transform: translateX(-80%); } /* Pause at image 9 */
+    90% { transform: translateX(-90%); }
+    98% { transform: translateX(-90%); } /* Pause at image 10 */
+    100% { transform: translateX(0%); } /* Reset to start */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .fade {
+        animation: none;
+    }
+    
+    .prev, .next, .dot {
+        transition: none;
+    }
+    
+    .mySlides img {
+        transition: none;
+    }
+    
+    .horizontal-slideshow {
+        animation: none;
+        transform: translateX(0%);
+    }
 }
