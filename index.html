@@ -106,38 +106,51 @@
             </div>
             
             <div class="card">
-                <div class="horizontal-slideshow-container">
-                    <div class="horizontal-slideshow">
-                        <div class="horizontal-slide">
-                            <img src="images/1.jpg" alt="TurboFeed Machine Overview" style="width: 100%; height: 100%; object-fit: contain;">
+                <div class="product-slideshow-container">
+                    <div class="product-slideshow">
+                        <div class="product-slide active">
+                            <img src="images/1.jpg" alt="TurboFeed Machine Overview">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/2.jpg" alt="TurboFeed Machine Detail" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/2.jpg" alt="TurboFeed Machine Detail">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/3.jpg" alt="TurboFeed Machine Interior" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/3.jpg" alt="TurboFeed Machine Interior">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/4.jpg" alt="TurboFeed Machine Controls" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/4.jpg" alt="TurboFeed Machine Controls">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/5.jpg" alt="TurboFeed Machine Display" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/5.jpg" alt="TurboFeed Machine Display">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/6.jpg" alt="TurboFeed Machine Payment" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/6.jpg" alt="TurboFeed Machine Payment">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/7.jpg" alt="TurboFeed Machine Installation" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/7.jpg" alt="TurboFeed Machine Installation">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/8.jpg" alt="TurboFeed Machine Maintenance" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/8.jpg" alt="TurboFeed Machine Maintenance">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/9.jpg" alt="TurboFeed Machine Security" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/9.jpg" alt="TurboFeed Machine Security">
                         </div>
-                        <div class="horizontal-slide">
-                            <img src="images/10.jpg" alt="TurboFeed Machine Complete" style="width: 100%; height: 100%; object-fit: contain;">
+                        <div class="product-slide">
+                            <img src="images/10.jpg" alt="TurboFeed Machine Complete">
                         </div>
+                    </div>
+                    
+                    <div class="product-slideshow-dots">
+                        <span class="product-dot active" onclick="currentProductSlide(1)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(2)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(3)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(4)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(5)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(6)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(7)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(8)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(9)"></span>
+                        <span class="product-dot" onclick="currentProductSlide(10)"></span>
                     </div>
                 </div>
                 
@@ -448,6 +461,40 @@
 
         // Initialize slideshow
         showSoftwareSlide(1);
+
+        // Product Slideshow functionality
+        let currentProductSlideIndex = 1;
+        const productSlides = document.querySelectorAll('.product-slide');
+        const productDots = document.querySelectorAll('.product-dot');
+
+        function showProductSlide(n) {
+            if (n > productSlides.length) currentProductSlideIndex = 1;
+            if (n < 1) currentProductSlideIndex = productSlides.length;
+
+            productSlides.forEach(slide => slide.classList.remove('active'));
+            productDots.forEach(dot => dot.classList.remove('active'));
+
+            if (productSlides[currentProductSlideIndex - 1]) {
+                productSlides[currentProductSlideIndex - 1].classList.add('active');
+            }
+            if (productDots[currentProductSlideIndex - 1]) {
+                productDots[currentProductSlideIndex - 1].classList.add('active');
+            }
+        }
+
+        function currentProductSlide(n) {
+            currentProductSlideIndex = n;
+            showProductSlide(currentProductSlideIndex);
+        }
+
+        // Auto-advance product slideshow every 5 seconds
+        setInterval(() => {
+            currentProductSlideIndex++;
+            showProductSlide(currentProductSlideIndex);
+        }, 5000);
+
+        // Initialize product slideshow
+        showProductSlide(1);
     </script>
 </body>
 </html>
